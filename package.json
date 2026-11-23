@@ -1,0 +1,10 @@
+{
+  "name": "homebase-essentials-v2",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "check": "node --check src/worker.js && node --check public/script.js && node --check public/v2.js"
+  },
+  "devDependencies": { "wrangler": "^4.0.0" }
+}
