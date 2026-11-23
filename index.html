@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <title>
+   HomeBase Essentials | Everyday Essentials. Better Prices.
+  </title>
+  <link href="style.css" rel="stylesheet"/>
+  <meta content="#061d38" name="theme-color"/>
+  <meta content="HomeBase Essentials &mdash; everyday household supplies and business bulk orders in Greater Houston. Browse essentials and request local delivery." name="description"/>
+  <link href="assets/homebase-profile.png" rel="icon" type="image/png"/>
+ </head>
+ <body>
+  <header>
+   <div class="top">
+    <img alt="HomeBase Essentials logo" class="logo" src="assets/homebase-logo.jpg"/>
+    <div class="right">
+     <span data-en="Serving Greater Houston" data-es="Sirviendo al &aacute;rea metropolitana de Houston">
+      Serving Greater Houston
+     </span>
+     <button class="langbtn" id="langbtn" onclick="toggleLanguage()" type="button">
+      Espa&ntilde;ol
+     </button>
+     <button class="cartbtn" onclick="toggleCart()">
+      Cart (
+      <span id="cartcount">
+       0
+      </span>
+      )
+     </button>
+    </div>
+   </div>
+   <div class="brandstrip">
+    <span data-en="&checkmark; Local pickup requests" data-es="&checkmark; Solicitudes para recoger">
+     &checkmark; Local pickup requests
+    </span>
+    <span data-en="&checkmark; Delivery inquiries" data-es="&checkmark; Consultas de entrega">
+     &checkmark; Delivery inquiries
+    </span>
+    <span data-en="&checkmark; Bulk supply quotes" data-es="&checkmark; Cotizaciones al por mayor">
+     &checkmark; Bulk supply quotes
+    </span>
+   </div>
+   <nav class="nav">
+    <div class="navinner">
+     <button class="tab active" data-en="Shop for Home" data-es="Comprar para el hogar" id="homeTab" onclick="showSection('home')">
+      Shop for Home
+     </button>
+     <button class="tab" data-en="Businesses &amp; Organizations" data-es="Empresas y organizaciones" id="businessTab" onclick="showSection('business')">
+      Businesses &amp; Organizations
+     </button>
+    </div>
+   </nav>
+  </header>
+  <main>
+   <section id="home">
+    <div class="hero">
+     <div>
+      <div class="eyebrow">
+       HOMEBASE ESSENTIALS &middot; HOUSTON, TEXAS
+      </div>
+      <h1>
+       Everyday essentials.
+       <br/>
+       Better prices.
+      </h1>
+      <p data-en="Stock up on paper goods, cleaning products, laundry care, hygiene essentials and useful household supplies&mdash;all in one convenient place." data-es="Compra papel, productos de limpieza, detergentes, art&iacute;culos de higiene y herramientas &uacute;tiles para el hogar, todo en un solo lugar.">
+       Stock up on paper goods, cleaning products, laundry care, hygiene essentials and useful household supplies&mdash;all in one convenient place.
+      </p>
+      <button class="goldbtn" data-en="Shop Essentials" data-es="Comprar productos" onclick="document.getElementById('catalog').scrollIntoView({behavior:'smooth'})">
+       Shop Essentials
+      </button>
+     </div>
+     <div class="heroart">
+      <img alt="HomeBase Essentials house and cart logo" class="hero-logo" src="assets/homebase-profile.png"/>
+     </div>
+    </div>
+    <div class="deliverybanner">
+     <strong data-i18n="bannerTitle">
+      Local delivery options
+     </strong>
+     <span data-i18n="bannerText">
+      Need supplies brought to you? Select delivery in your cart or request it with a business quote. Service areas and fees will be confirmed before launch.
+     </span>
+    </div>
+    <div class="features">
+     <div class="feature">
+      <strong data-en="Everyday value" data-es="Ahorro todos los d&iacute;as">
+       Everyday value
+      </strong>
+      <span data-en="Practical products for the things you use most." data-es="Productos pr&aacute;cticos para lo que m&aacute;s utilizas.">
+       Practical products for the things you use most.
+      </span>
+     </div>
+     <div class="feature">
+      <strong data-en="Household favorites" data-es="Favoritos del hogar">
+       Household favorites
+      </strong>
+      <span data-en="Shop across paper, laundry, cleaning and more." data-es="Encuentra papel, detergentes, productos de limpieza y m&aacute;s.">
+       Shop across paper, laundry, cleaning and more.
+      </span>
+     </div>
+     <div class="feature">
+      <strong data-en="Need larger quantities?" data-es="&iquest;Necesitas cantidades mayores?">
+       Need larger quantities?
+      </strong>
+      <span data-en="Visit our business tab for commercial and organizational inquiries." data-es="Visita la secci&oacute;n para empresas y organizaciones.">
+       Visit our business tab for commercial and organizational inquiries.
+      </span>
+     </div>
+    </div>
+    <div class="sectionhead" id="catalog">
+     <div>
+      <h2 data-en="Shop everyday essentials" data-es="Compra productos esenciales">
+       Shop everyday essentials
+      </h2>
+      <p data-en="Browse our sample catalog. Prices and availability will be updated before launch." data-es="Explora nuestro cat&aacute;logo de muestra. Los precios y la disponibilidad se actualizar&aacute;n antes del lanzamiento.">
+       Browse our sample catalog. Prices and availability will be updated before launch.
+      </p>
+     </div>
+    </div>
+    <div class="controls">
+     <input aria-label="Search products" data-placeholder-en="Search products..." data-placeholder-es="Buscar productos..." id="search" oninput="renderProducts()" placeholder="Search products..."/>
+     <select aria-label="Filter category" id="filter" onchange="renderProducts()">
+      <option data-en="All categories" data-es="Todas las categor&iacute;as" value="all">
+       All categories
+      </option>
+      <option data-en="Paper Products" data-es="Productos de papel">
+       Paper Products
+      </option>
+      <option data-en="Laundry &amp; Cleaning" data-es="Lavander&iacute;a y limpieza">
+       Laundry &amp; Cleaning
+      </option>
+      <option data-en="Soap &amp; Hygiene" data-es="Jab&oacute;n e higiene">
+       Soap &amp; Hygiene
+      </option>
+      <option data-en="Household Essentials" data-es="Art&iacute;culos para el hogar">
+       Household Essentials
+      </option>
+      <option data-en="Tools &amp; Hardware" data-es="Herramientas y ferreter&iacute;a">
+       Tools &amp; Hardware
+      </option>
+     </select>
+    </div>
+    <div class="products" id="products">
+    </div>
+   </section>
+   <section class="hidden" id="business">
+    <div class="hero">
+     <div>
+      <div class="eyebrow" data-en="COMMERCIAL &amp; ORGANIZATIONAL SUPPLY" data-es="SUMINISTROS PARA EMPRESAS Y ORGANIZACIONES">
+       COMMERCIAL &amp; ORGANIZATIONAL SUPPLY
+      </div>
+      <h1 data-en="Reliable essentials for the work you do." data-es="Productos esenciales para tu organizaci&oacute;n.">
+       Reliable essentials for the work you do.
+      </h1>
+      <p data-en="From offices and restaurants to churches, schools, cleaning companies and community organizations, HomeBase Essentials is building a simpler way to source everyday supplies in larger quantities." data-es="Desde oficinas y restaurantes hasta iglesias, escuelas, empresas de limpieza y organizaciones comunitarias, HomeBase Essentials ofrece una forma sencilla de solicitar suministros en grandes cantidades.">
+       From offices and restaurants to churches, schools, cleaning companies and community organizations, HomeBase Essentials is building a simpler way to source everyday supplies in larger quantities.
+      </p>
+      <button class="goldbtn" data-en="Request a Bulk Quote" data-es="Solicitar cotizaci&oacute;n al por mayor" onclick="document.getElementById('quote').scrollIntoView({behavior:'smooth'})">
+       Request a Bulk Quote
+      </button>
+     </div>
+     <div class="heroart">
+      <img alt="HomeBase Essentials house and cart logo" class="hero-logo" src="assets/homebase-profile.png"/>
+     </div>
+    </div>
+    <div class="deliverybanner">
+     <strong data-i18n="bannerTitle">
+      Local delivery options
+     </strong>
+     <span data-i18n="bannerText">
+      Need supplies brought to you? Select delivery in your cart or request it with a business quote. Service areas and fees will be confirmed before launch.
+     </span>
+    </div>
+    <div class="features">
+     <div class="feature">
+      <strong data-en="Case &amp; bulk inquiries" data-es="Pedidos por caja y volumen">
+       Case &amp; bulk inquiries
+      </strong>
+      <span data-en="Ask about larger quantities of paper, soap and cleaning supplies." data-es="Consulta por grandes cantidades de papel, jab&oacute;n y art&iacute;culos de limpieza.">
+       Ask about larger quantities of paper, soap and cleaning supplies.
+      </span>
+     </div>
+     <div class="feature">
+      <strong data-en="Custom product lists" data-es="Listas personalizadas">
+       Custom product lists
+      </strong>
+      <span data-en="Tell us what your organization uses and how often." data-es="Dinos qu&eacute; productos utiliza tu organizaci&oacute;n y con qu&eacute; frecuencia.">
+       Tell us what your organization uses and how often.
+      </span>
+     </div>
+     <div class="feature">
+      <strong data-en="Local relationships" data-es="Atenci&oacute;n local">
+       Local relationships
+      </strong>
+      <span data-en="Designed to serve organizations across Greater Houston." data-es="Pensado para organizaciones de toda el &aacute;rea de Houston.">
+       Designed to serve organizations across Greater Houston.
+      </span>
+     </div>
+    </div>
+    <div class="businessgrid">
+     <div class="panel">
+      <h2 data-en="Products for your organization" data-es="Productos para tu organizaci&oacute;n">
+       Products for your organization
+      </h2>
+      <ul>
+       <li data-en="Commercial paper towels, toilet tissue and napkins" data-es="Toallas de papel, papel higi&eacute;nico y servilletas comerciales">
+        Commercial paper towels, toilet tissue and napkins
+       </li>
+       <li data-en="Hand soap, dispenser refills and hygiene products" data-es="Jab&oacute;n de manos, repuestos para dispensadores y productos de higiene">
+        Hand soap, dispenser refills and hygiene products
+       </li>
+       <li data-en="Trash liners, gloves and janitorial essentials" data-es="Bolsas de basura, guantes y art&iacute;culos de limpieza">
+        Trash liners, gloves and janitorial essentials
+       </li>
+       <li data-en="Dish soap, detergent and general-purpose cleaners" data-es="Jab&oacute;n para platos, detergentes y limpiadores multiusos">
+        Dish soap, detergent and general-purpose cleaners
+       </li>
+       <li data-en="Disposable food-service and office supplies" data-es="Desechables para restaurantes y art&iacute;culos de oficina">
+        Disposable food-service and office supplies
+       </li>
+       <li data-en="Basic tools and facility maintenance items" data-es="Herramientas b&aacute;sicas y art&iacute;culos de mantenimiento">
+        Basic tools and facility maintenance items
+       </li>
+      </ul>
+      <p class="notice" data-en="Commercial inventory, case quantities, volume discounts and delivery arrangements are subject to confirmation." data-es="El inventario comercial, las cantidades por caja, los descuentos por volumen y las entregas est&aacute;n sujetos a confirmaci&oacute;n.">
+       Commercial inventory, case quantities, volume discounts and delivery arrangements are subject to confirmation.
+      </p>
+     </div>
+     <div class="panel" id="quote">
+      <h2 data-en="Request a business quote" data-es="Solicitar cotizaci&oacute;n comercial">
+       Request a business quote
+      </h2>
+      <p class="notice" data-en="Tell us what you need. This demo prepares an email draft in your email application; it does not submit information to a server." data-es="Cu&eacute;ntanos qu&eacute; necesitas. Esta demostraci&oacute;n prepara un texto para copiar; no env&iacute;a informaci&oacute;n a un servidor.">
+       Tell us what you need. This demo prepares an email draft in your email application; it does not submit information to a server.
+      </p>
+      <form class="form" onsubmit="prepareQuote(event)">
+       <label>
+        Business / organization name
+        <input data-placeholder-en="Organization name" data-placeholder-es="Nombre de la organizaci&oacute;n" id="org" placeholder="Organization name" required=""/>
+       </label>
+       <label>
+        Contact name
+        <input data-placeholder-en="Your name" data-placeholder-es="Tu nombre" id="contact" placeholder="Your name" required=""/>
+       </label>
+       <label>
+        Email
+        <input data-placeholder-en="you@company.com" data-placeholder-es="tu@empresa.com" id="email" placeholder="you@company.com" required="" type="email"/>
+       </label>
+       <label>
+        Organization type
+        <select id="orgtype">
+         <option data-en="Business" data-es="Empresa">
+          Business
+         </option>
+         <option data-en="Restaurant / Food Service" data-es="Restaurante / servicio de alimentos">
+          Restaurant / Food Service
+         </option>
+         <option data-en="Church / Nonprofit" data-es="Iglesia / organizaci&oacute;n sin fines de lucro">
+          Church / Nonprofit
+         </option>
+         <option data-en="School / Education" data-es="Escuela / educaci&oacute;n">
+          School / Education
+         </option>
+         <option data-en="Cleaning / Janitorial" data-es="Limpieza / mantenimiento">
+          Cleaning / Janitorial
+         </option>
+         <option data-en="Other" data-es="Otro">
+          Other
+         </option>
+        </select>
+       </label>
+       <label>
+        Items and approximate quantities
+        <textarea data-placeholder-en="Example: 10 cases of paper towels per month, 5 cases of hand soap..." data-placeholder-es="Ejemplo: 10 cajas de toallas de papel al mes, 5 cajas de jab&oacute;n..." id="needs" placeholder="Example: 10 cases of paper towels per month, 5 cases of hand soap..." required=""></textarea>
+       </label>
+       <label>
+        <span data-i18n="fulfillmentquote">
+         Preferred fulfillment
+        </span>
+        <select id="quoteDelivery">
+         <option data-i18n="pickupshort" value="pickup">
+          Pickup
+         </option>
+         <option data-i18n="deliveryshort" value="delivery">
+          Delivery (subject to confirmation)
+         </option>
+        </select>
+       </label>
+       <button class="goldbtn" data-en="Prepare Quote Request" data-es="Preparar solicitud de cotizaci&oacute;n" type="submit">
+        Prepare Quote Request
+       </button>
+       <p class="notice" data-en="A business email address must be configured before customers can send inquiries directly to HomeBase Essentials." data-es="Se necesita configurar un correo comercial antes de recibir solicitudes directamente." id="quoteStatus">
+        A business email address must be configured before customers can send inquiries directly to HomeBase Essentials.
+       </p>
+      </form>
+     </div>
+    </div>
+   </section>
+  </main>
+  <aside class="drawer" id="drawer">
+   <div class="drawerheader">
+    <h2 data-en="Your cart" data-es="Tu carrito">
+     Your cart
+    </h2>
+    <button class="outline" data-en="Close ✕" data-es="Cerrar ✕" onclick="toggleCart()" style="color:#122d4b">
+     Close ✕
+    </button>
+   </div>
+   <p class="notice" data-en="Sample storefront cart &mdash; checkout and payment processing are not enabled." data-es="Carrito de demostraci&oacute;n: todav&iacute;a no se aceptan pagos ni pedidos en l&iacute;nea.">
+    Sample storefront cart &mdash; checkout and payment processing are not enabled.
+   </p>
+   <div id="cartitems">
+   </div>
+   <div class="total" id="total">
+   </div>
+   <div class="deliverybox">
+    <h3 data-i18n="fulfillment">
+     How would you like your order?
+    </h3>
+    <label class="deliverychoice">
+     <input checked="" name="fulfill" onchange="updateFulfillment()" type="radio" value="pickup"/>
+     <span data-i18n="pickup">
+      Pickup (details confirmed after ordering)
+     </span>
+    </label>
+    <label class="deliverychoice">
+     <input name="fulfill" onchange="updateFulfillment()" type="radio" value="delivery"/>
+     <span data-i18n="delivery">
+      Local delivery (availability and fee to be confirmed)
+     </span>
+    </label>
+    <div class="hidden" id="deliveryfields">
+     <label data-i18n="deliveryaddress">
+      Delivery address
+     </label>
+     <textarea data-placeholder-en="Street address, city, ZIP" data-placeholder-es="Calle, ciudad y c&oacute;digo postal" id="deliveryaddress" placeholder="Street address, city, ZIP"></textarea>
+     <p class="notice" data-i18n="deliverynote">
+      Delivery areas, minimum orders and fees have not been finalized.
+     </p>
+    </div>
+   </div>
+   <button class="goldbtn" data-en="Checkout coming soon" data-es="Pago en l&iacute;nea pr&oacute;ximamente" onclick="alert('Online checkout is not connected yet. Please check back when HomeBase Essentials launches.')" style="width:100%">
+    Checkout coming soon
+   </button>
+   <div class="cartactions">
+    <button class="secondarybtn" data-en="Copy order request" data-es="Copiar solicitud de pedido" onclick="copyOrder()" type="button">
+     Copy order request
+    </button>
+    <p aria-live="polite" class="notice" id="orderstatus" role="status">
+    </p>
+   </div>
+  </aside>
+  <footer>
+   <strong>
+    HOMEBASE ESSENTIALS
+   </strong>
+   <p data-en="Everyday Essentials. Better Prices." data-es="Productos esenciales. Mejores precios.">
+    Everyday Essentials. Better Prices.
+   </p>
+   <p data-en="Serving Greater Houston &middot; Household essentials &amp; commercial supply inquiries" data-es="Sirviendo al &aacute;rea de Houston &middot; Productos para el hogar y cotizaciones comerciales">
+    Serving Greater Houston &middot; Household essentials &amp; commercial supply inquiries
+   </p>
+   <p data-en="Demo website. Sample products, prices and business services are not yet confirmed." data-es="Sitio de demostraci&oacute;n. Los productos, precios y servicios todav&iacute;a no est&aacute;n confirmados.">
+    Demo website. Sample products, prices and business services are not yet confirmed.
+   </p>
+  </footer>
+  <script src="script.js">
+  </script>
+ </body>
+</html>
