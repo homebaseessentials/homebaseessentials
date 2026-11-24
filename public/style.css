@@ -731,3 +731,33 @@ button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-vis
 }
 /* HomeBase Essentials 2.0 */
 .product-visual{width:100%;min-height:165px;border:0;background:#f0eee8;color:var(--navy);font-size:68px;display:flex;align-items:center;justify-content:center;overflow:hidden;cursor:pointer}.product-visual img,.modalhero img{width:100%;height:100%;object-fit:contain}.stockline{font-size:12px;color:#647587}.qtyctrl{display:flex;gap:7px;align-items:center}.qtyctrl button{border:1px solid #c4cad1;background:white;border-radius:5px;min-width:30px;min-height:30px}.catalogstatus{padding:9px 13px;border-left:3px solid var(--gold);background:#f4f0e7;margin:12px 0}.datefield{display:block;margin:15px 0;font-size:13px}.datefield input,.datefield select{display:block;width:100%;margin-top:6px;padding:9px;border:1px solid #c4cad1;border-radius:6px}dialog{border:1px solid #d7dce1;border-radius:14px;box-shadow:0 22px 80px #061d3855;max-width:min(850px,94vw);max-height:88vh;overflow:auto;padding:30px;color:var(--ink)}dialog::backdrop{background:#061d38b5}.modalclose{float:right;border:0;background:transparent;font-size:22px;padding:3px 8px;cursor:pointer}.modalgrid{display:grid;grid-template-columns:1fr 1fr;gap:26px;clear:both}.modalhero{min-height:250px;background:#f3f0ea;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:105px;overflow:hidden}.thumbs{display:flex;gap:8px;margin-top:10px}.thumbs img{height:62px;width:62px;object-fit:contain;border:1px solid #ddd;border-radius:6px}.modalgrid select,.modalgrid input{width:100%;padding:11px;border:1px solid #c7ced4;border-radius:6px;margin:7px 0 13px}.fieldlabel{font-size:13px;font-weight:700;display:block;margin-top:16px}.modalprice{font-weight:700;font-size:22px;color:var(--navy);margin:10px 0}.related{background:white;border:1px solid #ddd;padding:8px;margin:3px;border-radius:5px}.footerlinks{display:flex;gap:15px;justify-content:center;flex-wrap:wrap;margin-top:15px}.footerlinks button{background:transparent;color:var(--gold);border:1px solid var(--gold);padding:10px;border-radius:5px}@media(max-width:650px){.modalgrid{grid-template-columns:1fr}dialog{padding:18px}.modalhero{min-height:180px}.top .right{gap:7px}.product-visual{min-height:130px}}
+/* HomeBase Essentials - Standardized Product Images */
+
+.product-visual,
+.modalhero {
+  background: #ffffff;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  min-height: 0;
+  padding: 10%;
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-visual img,
+.modalhero img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.thumbs img {
+  background: #ffffff;
+  object-fit: contain;
+  padding: 5px;
+  box-sizing: border-box;
+}
