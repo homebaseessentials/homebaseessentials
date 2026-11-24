@@ -50,6 +50,7 @@
      <button class="tab" data-en="Businesses &amp; Organizations" data-es="Empresas y organizaciones" id="businessTab" onclick="showSection('business')">
       Businesses &amp; Organizations
      </button>
+<button class="tab" id="aboutTab" onclick="showSection('about')" data-en="Our Story" data-es="Nuestra historia">Our Story</button>
     </div>
    </nav>
   </header>
@@ -60,17 +61,14 @@
       <div class="eyebrow">
        HOMEBASE ESSENTIALS &middot; HOUSTON, TEXAS
       </div>
-      <h1>
-       Everyday essentials.
-       <br/>
-       Better prices.
-      </h1>
+      <h1  data-en="Everyday essentials. Better prices." data-es="Productos esenciales. Mejores precios.">Everyday essentials. Better prices.</h1>
       <p data-en="Stock up on paper goods, cleaning products, laundry care, hygiene essentials and useful household supplies&mdash;all in one convenient place." data-es="Compra papel, productos de limpieza, detergentes, art&iacute;culos de higiene y herramientas &uacute;tiles para el hogar, todo en un solo lugar.">
        Stock up on paper goods, cleaning products, laundry care, hygiene essentials and useful household supplies&mdash;all in one convenient place.
       </p>
       <button class="goldbtn" data-en="Shop Essentials" data-es="Comprar productos" onclick="document.getElementById('catalog').scrollIntoView({behavior:'smooth'})">
        Shop Essentials
       </button>
+<button class="hero-secondary" onclick="showSection('business')" data-en="Explore Wholesale" data-es="Explorar ventas al por mayor">Explore Wholesale</button>
      </div>
      <div class="heroart">
       <img alt="HomeBase Essentials house and cart logo" class="hero-logo" src="assets/homebase-profile.png"/>
@@ -110,6 +108,7 @@
       </span>
      </div>
     </div>
+<div class="mission-preview"><div class="eyebrow" data-en="OUR PURPOSE" data-es="NUESTRO PROPÓSITO">OUR PURPOSE</div><h2  data-en="Making everyday living more affordable." data-es="Hacer más asequible la vida cotidiana.">Making everyday living more affordable.</h2><p  data-en="Supporting households and businesses as everyday costs rise." data-es="Apoyamos a hogares y empresas ante el aumento de los costos cotidianos.">Supporting households and businesses as everyday costs rise.</p><button class="hero-secondary" onclick="showSection('about')" data-en="Discover Our Story" data-es="Conoce nuestra historia">Discover Our Story</button></div>
     <div class="sectionhead" id="catalog">
      <div>
       <h2 data-en="Shop everyday essentials" data-es="Compra productos esenciales">
@@ -299,6 +298,7 @@
      </div>
     </div>
    </section>
+<section id="about" class="hidden"><div class="story-intro"><div class="eyebrow" data-en="OUR STORY · HOUSTON, TEXAS" data-es="NUESTRA HISTORIA · HOUSTON, TEXAS">OUR STORY · HOUSTON, TEXAS</div><h1  data-en="Everyday essentials should be within reach." data-es="Los productos esenciales deben estar al alcance de todos.">Everyday essentials should be within reach.</h1><p  data-en="A local business with a simple purpose: helping people make their money go further." data-es="Un negocio local con un propósito sencillo: ayudar a que el dinero rinda más.">A local business with a simple purpose: helping people make their money go further.</p></div><div class="story-body"><h2  data-en="Why I started HomeBase Essentials" data-es="Por qué fundé HomeBase Essentials">Why I started HomeBase Essentials</h2><p  data-en="Through my experience in commercial banking and financial analysis, I have seen how rising operating costs can put pressure on businesses. Even small changes in recurring expenses can make a difference over time." data-es="A través de mi experiencia en banca comercial y análisis financiero, he visto cómo el aumento de los costos operativos puede afectar a las empresas. Incluso pequeños cambios en los gastos recurrentes pueden marcar una diferencia con el tiempo.">Through my experience in commercial banking and financial analysis, I have seen how rising operating costs can put pressure on businesses. Even small changes in recurring expenses can make a difference over time.</p><p  data-en="Families face similar challenges when buying the basic supplies they depend on every day. I started HomeBase Essentials with both households and businesses in mind, to offer a simpler way to shop for necessities and manage everyday spending." data-es="Las familias enfrentan desafíos similares al comprar los productos básicos que necesitan a diario. Fundé HomeBase Essentials pensando tanto en hogares como en empresas, para ofrecer una forma más sencilla de comprar productos esenciales y administrar los gastos cotidianos.">Families face similar challenges when buying the basic supplies they depend on every day. I started HomeBase Essentials with both households and businesses in mind, to offer a simpler way to shop for necessities and manage everyday spending.</p><h2  data-en="Our mission" data-es="Nuestra misión">Our mission</h2><p  data-en="Our mission is to make everyday essentials more accessible through competitive pricing, clear purchasing options and dependable local service. We aim to help families and businesses across Greater Houston make the most of their budgets." data-es="Nuestra misión es hacer más accesibles los productos esenciales mediante precios competitivos, opciones de compra claras y un servicio local confiable. Buscamos ayudar a familias y empresas del área de Houston a aprovechar mejor sus presupuestos.">Our mission is to make everyday essentials more accessible through competitive pricing, clear purchasing options and dependable local service. We aim to help families and businesses across Greater Houston make the most of their budgets.</p></div><div class="features story-values"><div class="feature"><strong  data-en="Affordability" data-es="Precios accesibles">Affordability</strong><span  data-en="Practical value for everyday needs." data-es="Valor práctico para las necesidades diarias.">Practical value for everyday needs.</span></div><div class="feature"><strong  data-en="Transparency" data-es="Transparencia">Transparency</strong><span  data-en="Clear pricing and straightforward purchasing." data-es="Precios claros y compras sencillas.">Clear pricing and straightforward purchasing.</span></div><div class="feature"><strong  data-en="Community" data-es="Comunidad">Community</strong><span  data-en="Supporting local households and businesses." data-es="Apoyo a hogares y empresas locales.">Supporting local households and businesses.</span></div></div><div class="story-actions"><button class="goldbtn" onclick="showSection('home');document.getElementById('catalog').scrollIntoView()" data-en="Shop Essentials" data-es="Comprar productos">Shop Essentials</button><button class="hero-secondary" onclick="showSection('business')" data-en="Explore Wholesale" data-es="Explorar ventas al por mayor">Explore Wholesale</button></div></section>
   </main>
   <aside class="drawer" id="drawer">
    <div class="drawerheader">
@@ -369,6 +369,7 @@
     <p style="font-size:12px; opacity:0.75; line-height:1.6; margin-top:20px; text-align:center;">
     HomeBase Essentials is an independent retailer. All third-party trademarks, logos, and brand names are the property of their respective owners. Their use is solely for product identification and does not imply affiliation, sponsorship, or endorsement.
   </p>
+<button class="footer-story" onclick="showSection('about')" data-en="Our Story" data-es="Nuestra historia">Our Story</button>
   </footer>
   <script src="config.js"></script>
   <script src="script.js">

@@ -10,11 +10,7 @@ const esNames=['Toallas de papel — paquete de 6 rollos','Papel higiénico — 
 const esDescs=['Toallas absorbentes para uso diario','Paquete de papel para baño','Servilletas prácticas para la mesa','Pañuelos suaves para el hogar','Detergente líquido para ropa','Limpieza diaria de platos','Limpiador para superficies del hogar','Producto esencial para lavandería','Jabón para cocina y baño','Jabón para higiene diaria','Producto esencial para manos','Bolsas para basura de cocina','Para cocinar y almacenar alimentos','Esponjas de uso múltiple','Para uso general en el hogar','Herramienta para medir','Juego básico para reparaciones','Cinta para reparaciones'];
 
 function t(en,es){return language==='es'?es:en}
-function showSection(s){try{localStorage.setItem('homebase_tab',s)}catch(e){}document.getElementById('home').classList.toggle('hidden',s!=='home');
-document.getElementById('business').classList.toggle('hidden',s!=='business');
-document.getElementById('homeTab').classList.toggle('active',s==='home');
-document.getElementById('businessTab').classList.toggle('active',s==='business');
-window.scrollTo({top:0,behavior:'smooth'})}
+function showSection(s){if(!['home','business','about'].includes(s))s='home';try{localStorage.setItem('homebase_tab',s)}catch(e){}for(const key of ['home','business','about']){document.getElementById(key).classList.toggle('hidden',s!==key);const tab=document.getElementById(key+'Tab');tab.classList.toggle('active',s===key);tab.setAttribute('aria-pressed',String(s===key));}window.scrollTo({top:0,behavior:'smooth'})}
 function toggleLanguage(){language=language==='en'?'es':'en';
 try{localStorage.setItem('homebase_lang',language)}catch(e){}document.documentElement.lang=language;
 document.getElementById('langbtn').textContent=language==='en'?'Español':'English';
@@ -131,5 +127,5 @@ btn.textContent=t('Copy quote details','Copiar detalles de cotización');
 btn.onclick=()=>copyText(draft.value,'quoteStatus');
 draft.after(btn)}};
 
-window.addEventListener('DOMContentLoaded',()=>{renderCart();if(language==='es'){language='en';toggleLanguage()}try{if(localStorage.getItem('homebase_tab')==='business')showSection('business')}catch(e){}});
+window.addEventListener('DOMContentLoaded',()=>{renderCart();if(language==='es'){language='en';toggleLanguage()}try{showSection(localStorage.getItem('homebase_tab')||'home')}catch(e){}});
 
