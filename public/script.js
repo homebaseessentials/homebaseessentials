@@ -1,4 +1,4 @@
-// HomeBase Essentials | Storefront interactions
+// Texas Home & Business Essentials | Storefront interactions
 const items=[['Paper Towels — 6 Roll Pack','Paper Products',9.99,'🧻','Everyday household absorbent towels'],['Toilet Tissue — 12 Roll Pack','Paper Products',11.99,'🧻','Bathroom tissue multipack'],['Everyday Napkins — 250 Count','Paper Products',4.49,'📄','Convenient everyday table napkins'],['Facial Tissue — 3 Boxes','Paper Products',5.99,'📦','Soft household tissues'],['Laundry Detergent — 64 oz','Laundry & Cleaning',8.99,'🧺','Liquid laundry detergent'],['Dishwashing Liquid — 28 oz','Laundry & Cleaning',3.99,'🫧','Everyday dish cleaning'],['Multi-Surface Cleaner','Laundry & Cleaning',4.99,'🧽','Household surface cleaner'],['Fabric Softener — 50 oz','Laundry & Cleaning',6.99,'🧴','Laundry care essential'],['Liquid Hand Soap — 2 Pack','Soap & Hygiene',5.49,'🧴','Hand soap for kitchen and bath'],['Bar Soap — 6 Pack','Soap & Hygiene',5.99,'🧼','Daily cleansing soap'],['Hand Sanitizer — 16 oz','Soap & Hygiene',3.99,'🧴','Hand hygiene essential'],['Trash Bags — 30 Count','Household Essentials',7.99,'🗑️','Kitchen-size household liners'],['Aluminum Foil — 75 sq ft','Household Essentials',4.49,'📦','Cooking and food storage'],['Cleaning Sponges — 6 Pack','Household Essentials',3.99,'🧽','Multi-purpose cleaning sponges'],['Disposable Gloves — 50 Count','Household Essentials',6.49,'🧤','General household use'],['Tape Measure — 25 ft','Tools & Hardware',7.99,'📏','Everyday measuring tool'],['Screwdriver Set — 6 Piece','Tools & Hardware',10.99,'🪛','Basic home maintenance set'],['Duct Tape — 2 Pack','Tools & Hardware',6.99,'🧰','Utility and repair tape']].map((x,i)=>({id:i,name:x[0],category:x[1],price:x[2],emoji:x[3],desc:x[4]}));
 let cart={},language='en';
 try{cart=JSON.parse(localStorage.getItem('homebase_cart')||'{}');
@@ -74,7 +74,7 @@ function toggleCart(){document.getElementById('drawer').classList.toggle('open')
 function updateFulfillment(){document.getElementById('deliveryfields').classList.toggle('hidden',document.querySelector('input[name="fulfill"]:checked').value!=='delivery')}
 function prepareQuote(e){e.preventDefault();
 let org=document.getElementById('org').value,contact=document.getElementById('contact').value,email=document.getElementById('email').value,type=document.getElementById('orgtype').value,needs=document.getElementById('needs').value,delivery=document.getElementById('quoteDelivery').value;
-let subject='HomeBase Essentials - '+t('Bulk Supply Quote Request','Solicitud de cotización')+' - '+org;
+let subject='Texas Home & Business Essentials - '+t('Bulk Supply Quote Request','Solicitud de cotización')+' - '+org;
 let body=`${t('Organization','Organización')}: ${org}\n${t('Contact','Contacto')}: ${contact}\n${t('Email','Correo')}: ${email}\n${t('Type','Tipo')}: ${type}\n${t('Fulfillment','Entrega')}: ${delivery}\n\n${t('Requested items and quantities','Productos y cantidades solicitadas')}:\n${needs}`;
 document.getElementById('quoteStatus').textContent=t('Quote prepared. Copy the details below and send them once a business email is published.','Cotización preparada. Copia la información y envíala cuando se publique el correo comercial.');
 const old=document.getElementById('draft');
@@ -109,7 +109,7 @@ const address=document.getElementById('deliveryaddress').value.trim();
 if(fulfillment==='delivery'&&!address){document.getElementById('orderstatus').textContent=t('Enter a delivery address before copying your request.','Ingresa la dirección de entrega antes de copiar la solicitud.');
 return;
 }const subtotal=keys.reduce((s,k)=>s+cart[k]*items[k].price,0);
-const lines=[t('HomeBase Essentials — Product Inquiry','HomeBase Essentials — Consulta de productos'),''];
+const lines=[t('Texas Home & Business Essentials — Product Inquiry','Texas Home & Business Essentials — Consulta de productos'),''];
 keys.forEach(k=>lines.push(`${cart[k]} × ${language==='es'?esNames[k]:items[k].name} — $${(cart[k]*items[k].price).toFixed(2)}`));
 lines.push('',`${t('Estimated sample subtotal','Subtotal estimado de muestra')}: $${subtotal.toFixed(2)}`,`${t('Requested method','Método solicitado')}: ${fulfillment==='delivery'?t('Local delivery','Entrega local'):t('Pickup','Recoger')}`);
 if(address)lines.push(`${t('Delivery address','Dirección de entrega')}: ${address}`);
