@@ -3,7 +3,7 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     if (url.pathname === '/api/health') {
-      return Response.json({ ok: true, service: 'HomeBase Essentials 2.0' }, { headers: { 'Cache-Control': 'no-store' } });
+      return Response.json({ ok: true, service: 'Texas Home & Business Essentials 2.0' }, { headers: { 'Cache-Control': 'no-store' } });
     }
     if (url.pathname === '/api/catalog') {
       if (request.method !== 'GET') return new Response('Method not allowed', { status: 405 });
