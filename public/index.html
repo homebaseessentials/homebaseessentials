@@ -15,10 +15,11 @@
   <header>
    <div class="top">
     <img alt="Texas Home &amp; Business Essentials logo" class="logo" src="assets/texas-hbe-logo.jpg"/>
+    <form class="header-search" role="search" onsubmit="event.preventDefault(); document.getElementById('filter').value='all'; showSection('home'); renderProducts(); requestAnimationFrame(() => document.getElementById('catalog').scrollIntoView({behavior:'smooth'}));">
+     <input type="search" aria-label="Search products / Buscar productos" data-placeholder-en="Search products..." data-placeholder-es="Buscar productos..." id="search" oninput="document.getElementById('filter').value='all'; renderProducts()" placeholder="Search products..."/>
+     <button type="submit" aria-label="Search / Buscar"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></button>
+    </form>
     <div class="right">
-     <span data-en="Serving Greater Houston" data-es="Sirviendo al &aacute;rea metropolitana de Houston">
-      Serving Greater Houston
-     </span>
      <button class="langbtn" id="langbtn" onclick="toggleLanguage()" type="button">
       Espa&ntilde;ol
      </button>
@@ -30,17 +31,6 @@
       )
      </button>
     </div>
-   </div>
-   <div class="brandstrip">
-    <span data-en="&checkmark; Local pickup requests" data-es="&checkmark; Solicitudes para recoger">
-     &checkmark; Local pickup requests
-    </span>
-    <span data-en="&checkmark; Delivery inquiries" data-es="&checkmark; Consultas de entrega">
-     &checkmark; Delivery inquiries
-    </span>
-    <span data-en="&checkmark; Bulk supply quotes" data-es="&checkmark; Cotizaciones al por mayor">
-     &checkmark; Bulk supply quotes
-    </span>
    </div>
    <nav class="nav">
     <div class="navinner">
@@ -120,7 +110,6 @@
      </div>
     </div>
     <div class="controls">
-     <input aria-label="Search products" data-placeholder-en="Search products..." data-placeholder-es="Buscar productos..." id="search" oninput="renderProducts()" placeholder="Search products..."/>
      <select aria-label="Filter category" id="filter" onchange="renderProducts()">
       <option data-en="All categories" data-es="Todas las categor&iacute;as" value="all">
        All categories
@@ -146,160 +135,132 @@
     </div>
    </section>
    <section class="hidden" id="business">
-    <div class="hero">
-     <div>
-      <div class="eyebrow" data-en="COMMERCIAL &amp; ORGANIZATIONAL SUPPLY" data-es="SUMINISTROS PARA EMPRESAS Y ORGANIZACIONES">
+<div class="hero">
+<div>
+<div class="eyebrow" data-en="COMMERCIAL &amp; ORGANIZATIONAL SUPPLY" data-es="SUMINISTROS PARA EMPRESAS Y ORGANIZACIONES">
        COMMERCIAL &amp; ORGANIZATIONAL SUPPLY
       </div>
-      <h1 data-en="Your Business. Our Commitment." data-es="Tu negocio. Nuestro compromiso.">
+<h1 data-en="Your Business. Our Commitment." data-es="Tu negocio. Nuestro compromiso.">
        Your Business. Our Commitment.
       </h1>
-      <p data-en="From offices and restaurants to churches, schools, cleaning companies and community organizations, Texas Home &amp; Business Essentials is building a simpler way to source everyday supplies in larger quantities." data-es="Desde oficinas y restaurantes hasta iglesias, escuelas, empresas de limpieza y organizaciones comunitarias, Texas Home &amp; Business Essentials ofrece una forma sencilla de solicitar suministros en grandes cantidades.">
+<p data-en="From offices and restaurants to churches, schools, cleaning companies and community organizations, Texas Home &amp; Business Essentials is building a simpler way to source everyday supplies in larger quantities." data-es="Desde oficinas y restaurantes hasta iglesias, escuelas, empresas de limpieza y organizaciones comunitarias, Texas Home &amp; Business Essentials ofrece una forma sencilla de solicitar suministros en grandes cantidades.">
        From offices and restaurants to churches, schools, cleaning companies and community organizations, Texas Home &amp; Business Essentials is building a simpler way to source everyday supplies in larger quantities.
       </p>
-      <button class="goldbtn" data-en="Request a Bulk Quote" data-es="Solicitar cotizaci&oacute;n al por mayor" onclick="document.getElementById('quote').scrollIntoView({behavior:'smooth'})">
+<button class="goldbtn" data-en="Request a Bulk Quote" data-es="Solicitar cotización al por mayor" onclick="document.getElementById('quote').scrollIntoView({behavior:'smooth'})">
        Request a Bulk Quote
       </button>
-      <button class="hero-secondary" onclick="showSection('home');document.getElementById('catalog').scrollIntoView()" data-en="Browse Products" data-es="Ver productos">Browse Products</button>
-     </div>
-     <div class="heroart">
-      <img alt="Illustrative image of a business owner greeting a customer" class="wholesale-hero-photo" src="https://pub-c8e0ce5c7b9243408a44c12121ca35a2.r2.dev/banners/wholesale-hero.png" width="1728" height="864"/>
-     </div>
-    </div>
-    <div class="deliverybanner">
-     <strong data-i18n="bannerTitle">
-      Local delivery options
-     </strong>
-     <span data-i18n="bannerText">
-      Need supplies brought to you? Select delivery in your cart or request it with a business quote. Service areas and fees will be confirmed before launch.
-     </span>
-    </div>
-    <div class="features">
-     <div class="feature">
-      <strong data-en="Case &amp; bulk inquiries" data-es="Pedidos por caja y volumen">
+<button class="hero-secondary" data-en="Browse Products" data-es="Ver productos" onclick="showSection('home');document.getElementById('catalog').scrollIntoView()">Browse Products</button>
+</div>
+<div class="heroart">
+<img alt="Illustrative image of a business owner greeting a customer" class="wholesale-hero-photo" height="864" src="https://pub-c8e0ce5c7b9243408a44c12121ca35a2.r2.dev/banners/wholesale-hero.png" width="1728"/>
+</div>
+</div>
+
+<div class="features">
+<div class="feature">
+<strong data-en="Case &amp; bulk inquiries" data-es="Pedidos por caja y volumen">
        Case &amp; bulk inquiries
       </strong>
-      <span data-en="Ask about larger quantities of paper, soap and cleaning supplies." data-es="Consulta por grandes cantidades de papel, jab&oacute;n y art&iacute;culos de limpieza.">
+<span data-en="Ask about larger quantities of paper, soap and cleaning supplies." data-es="Consulta por grandes cantidades de papel, jabón y artículos de limpieza.">
        Ask about larger quantities of paper, soap and cleaning supplies.
       </span>
-     </div>
-     <div class="feature">
-      <strong data-en="Custom product lists" data-es="Listas personalizadas">
+</div>
+<div class="feature">
+<strong data-en="Custom product lists" data-es="Listas personalizadas">
        Custom product lists
       </strong>
-      <span data-en="Tell us what your organization uses and how often." data-es="Dinos qu&eacute; productos utiliza tu organizaci&oacute;n y con qu&eacute; frecuencia.">
+<span data-en="Tell us what your organization uses and how often." data-es="Dinos qué productos utiliza tu organización y con qué frecuencia.">
        Tell us what your organization uses and how often.
       </span>
-     </div>
-     <div class="feature">
-      <strong data-en="Local relationships" data-es="Atenci&oacute;n local">
+</div>
+<div class="feature">
+<strong data-en="Local relationships" data-es="Atención local">
        Local relationships
       </strong>
-      <span data-en="Designed to serve organizations across Greater Houston." data-es="Pensado para organizaciones de toda el &aacute;rea de Houston.">
+<span data-en="Designed to serve organizations across Greater Houston." data-es="Pensado para organizaciones de toda el área de Houston.">
        Designed to serve organizations across Greater Houston.
       </span>
-     </div>
-    </div>
-    <div class="businessgrid">
-     <div class="panel">
-      <h2 data-en="Products for your organization" data-es="Productos para tu organizaci&oacute;n">
+</div>
+</div>
+<div class="businessgrid quote-layout">
+<div class="quote-sidebar"><div class="eyebrow" data-en="COMMERCIAL SUPPLY" data-es="SUMINISTROS COMERCIALES">COMMERCIAL SUPPLY</div>
+<h2 data-en="Products for your organization" data-es="Productos para tu organización">
        Products for your organization
       </h2>
-      <ul>
-       <li data-en="Commercial paper towels, toilet tissue and napkins" data-es="Toallas de papel, papel higi&eacute;nico y servilletas comerciales">
+<ul>
+<li data-en="Commercial paper towels, toilet tissue and napkins" data-es="Toallas de papel, papel higiénico y servilletas comerciales">
         Commercial paper towels, toilet tissue and napkins
        </li>
-       <li data-en="Hand soap, dispenser refills and hygiene products" data-es="Jab&oacute;n de manos, repuestos para dispensadores y productos de higiene">
+<li data-en="Hand soap, dispenser refills and hygiene products" data-es="Jabón de manos, repuestos para dispensadores y productos de higiene">
         Hand soap, dispenser refills and hygiene products
        </li>
-       <li data-en="Trash liners, gloves and janitorial essentials" data-es="Bolsas de basura, guantes y art&iacute;culos de limpieza">
+<li data-en="Trash liners, gloves and janitorial essentials" data-es="Bolsas de basura, guantes y artículos de limpieza">
         Trash liners, gloves and janitorial essentials
        </li>
-       <li data-en="Dish soap, detergent and general-purpose cleaners" data-es="Jab&oacute;n para platos, detergentes y limpiadores multiusos">
+<li data-en="Dish soap, detergent and general-purpose cleaners" data-es="Jabón para platos, detergentes y limpiadores multiusos">
         Dish soap, detergent and general-purpose cleaners
        </li>
-       <li data-en="Disposable food-service and office supplies" data-es="Desechables para restaurantes y art&iacute;culos de oficina">
+<li data-en="Disposable food-service and office supplies" data-es="Desechables para restaurantes y artículos de oficina">
         Disposable food-service and office supplies
        </li>
-       <li data-en="Basic tools and facility maintenance items" data-es="Herramientas b&aacute;sicas y art&iacute;culos de mantenimiento">
+<li data-en="Basic tools and facility maintenance items" data-es="Herramientas básicas y artículos de mantenimiento">
         Basic tools and facility maintenance items
        </li>
-      </ul>
-      <p class="notice" data-en="Commercial inventory, case quantities, volume discounts and delivery arrangements are subject to confirmation." data-es="El inventario comercial, las cantidades por caja, los descuentos por volumen y las entregas est&aacute;n sujetos a confirmaci&oacute;n.">
+</ul>
+<p class="notice" data-en="Commercial inventory, case quantities, volume discounts and delivery arrangements are subject to confirmation." data-es="El inventario comercial, las cantidades por caja, los descuentos por volumen y las entregas están sujetos a confirmación.">
        Commercial inventory, case quantities, volume discounts and delivery arrangements are subject to confirmation.
       </p>
-     </div>
-     <div class="panel" id="quote">
-      <h2 data-en="Request a business quote" data-es="Solicitar cotizaci&oacute;n comercial">
-       Request a business quote
-      </h2>
-      <p class="notice" data-en="Tell us what you need. This demo prepares an email draft in your email application; it does not submit information to a server." data-es="Cu&eacute;ntanos qu&eacute; necesitas. Esta demostraci&oacute;n prepara un texto para copiar; no env&iacute;a informaci&oacute;n a un servidor.">
-       Tell us what you need. This demo prepares an email draft in your email application; it does not submit information to a server.
-      </p>
-      <form class="form" onsubmit="prepareQuote(event)">
-       <label>
-        Business / organization name
-        <input data-placeholder-en="Organization name" data-placeholder-es="Nombre de la organizaci&oacute;n" id="org" placeholder="Organization name" required=""/>
-       </label>
-       <label>
-        Contact name
-        <input data-placeholder-en="Your name" data-placeholder-es="Tu nombre" id="contact" placeholder="Your name" required=""/>
-       </label>
-       <label>
-        Email
-        <input data-placeholder-en="you@company.com" data-placeholder-es="tu@empresa.com" id="email" placeholder="you@company.com" required="" type="email"/>
-       </label>
-       <label>
-        Organization type
-        <select id="orgtype">
-         <option data-en="Business" data-es="Empresa">
+</div>
+<div class="panel" id="quote"><div class="eyebrow" data-en="LET’S WORK TOGETHER" data-es="TRABAJEMOS JUNTOS">LET’S WORK TOGETHER</div>
+<h2 data-en="Request a quote" data-es="Solicita una cotización">Request a quote</h2>
+<p class="quote-lead" data-en="Share your supply needs and estimated quantities so we can evaluate your request." data-es="Comparte tus necesidades y cantidades estimadas para que podamos evaluar tu solicitud.">Share your supply needs and estimated quantities so we can evaluate your request.</p>
+<form class="form" onsubmit="prepareQuote(event)">
+<label><span data-en="Business / organization name" data-es="Nombre de la organización">Business / organization name</span><input data-placeholder-en="Organization name" data-placeholder-es="Nombre de la organización" id="org" placeholder="Organization name" required=""/></label>
+<label><span data-en="Contact name" data-es="Nombre de contacto">Contact name</span><input data-placeholder-en="Your name" data-placeholder-es="Tu nombre" id="contact" placeholder="Your name" required=""/></label>
+<label><span data-en="Email" data-es="Correo electrónico">Email</span><input data-placeholder-en="you@company.com" data-placeholder-es="tu@empresa.com" id="email" placeholder="you@company.com" required="" type="email"/></label>
+<label><span data-en="Organization type" data-es="Tipo de organización">Organization type</span><select id="orgtype">
+<option data-en="Business" data-es="Empresa">
           Business
          </option>
-         <option data-en="Restaurant / Food Service" data-es="Restaurante / servicio de alimentos">
+<option data-en="Restaurant / Food Service" data-es="Restaurante / servicio de alimentos">
           Restaurant / Food Service
          </option>
-         <option data-en="Church / Nonprofit" data-es="Iglesia / organizaci&oacute;n sin fines de lucro">
+<option data-en="Church / Nonprofit" data-es="Iglesia / organización sin fines de lucro">
           Church / Nonprofit
          </option>
-         <option data-en="School / Education" data-es="Escuela / educaci&oacute;n">
+<option data-en="School / Education" data-es="Escuela / educación">
           School / Education
          </option>
-         <option data-en="Cleaning / Janitorial" data-es="Limpieza / mantenimiento">
+<option data-en="Cleaning / Janitorial" data-es="Limpieza / mantenimiento">
           Cleaning / Janitorial
          </option>
-         <option data-en="Other" data-es="Otro">
+<option data-en="Other" data-es="Otro">
           Other
          </option>
-        </select>
-       </label>
-       <label>
-        Items and approximate quantities
-        <textarea data-placeholder-en="Example: 10 cases of paper towels per month, 5 cases of hand soap..." data-placeholder-es="Ejemplo: 10 cajas de toallas de papel al mes, 5 cajas de jab&oacute;n..." id="needs" placeholder="Example: 10 cases of paper towels per month, 5 cases of hand soap..." required=""></textarea>
-       </label>
-       <label>
-        <span data-i18n="fulfillmentquote">
+</select></label>
+<label class="quote-wide"><span data-en="Items and approximate quantities" data-es="Productos y cantidades aproximadas">Items and approximate quantities</span><textarea data-placeholder-en="Example: 10 cases of paper towels per month, 5 cases of hand soap..." data-placeholder-es="Ejemplo: 10 cajas de toallas de papel al mes, 5 cajas de jabón..." id="needs" placeholder="Example: 10 cases of paper towels per month, 5 cases of hand soap..." required=""></textarea></label>
+<label class="quote-wide">
+<span data-i18n="fulfillmentquote">
          Preferred fulfillment
         </span>
-        <select id="quoteDelivery">
-         <option data-i18n="pickupshort" value="pickup">
+<select id="quoteDelivery">
+<option data-i18n="pickupshort" value="pickup">
           Pickup
          </option>
-         <option data-i18n="deliveryshort" value="delivery">
+<option data-i18n="deliveryshort" value="delivery">
           Delivery (subject to confirmation)
          </option>
-        </select>
-       </label>
-       <button class="goldbtn" data-en="Prepare Quote Request" data-es="Preparar solicitud de cotizaci&oacute;n" type="submit">
+</select>
+</label>
+<button class="goldbtn quote-wide" data-en="Prepare Quote Request" data-es="Preparar solicitud de cotización" type="submit">
         Prepare Quote Request
        </button>
-       <p class="notice" data-en="A business email address must be configured before customers can send inquiries directly to Texas Home &amp; Business Essentials." data-es="Se necesita configurar un correo comercial antes de recibir solicitudes directamente." id="quoteStatus">
-        A business email address must be configured before customers can send inquiries directly to Texas Home &amp; Business Essentials.
-       </p>
-      </form>
-     </div>
-    </div>
-   </section>
-<section id="about" class="hidden"><div class="story-intro"><div class="eyebrow" data-en="OUR STORY · HOUSTON, TEXAS" data-es="NUESTRA HISTORIA · HOUSTON, TEXAS">OUR STORY · HOUSTON, TEXAS</div><h1  data-en="Rooted in Houston. Built with Purpose." data-es="Con raíces en Houston. Con un propósito claro.">Rooted in Houston. Built with Purpose.</h1><p  data-en="A local business with a simple purpose: helping people make their money go further." data-es="Un negocio local con un propósito sencillo: ayudar a que el dinero rinda más.">A local business with a simple purpose: helping people make their money go further.</p></div><figure class="story-skyline"><img src="https://pub-c8e0ce5c7b9243408a44c12121ca35a2.r2.dev/banners/our-story-hero.png" alt="AI-generated illustration inspired by the Houston skyline" width="1728" height="864" loading="lazy"><figcaption data-en="AI-generated illustration inspired by Houston." data-es="Ilustración generada por IA e inspirada en Houston.">AI-generated illustration inspired by Houston.</figcaption></figure><div class="story-body"><h2  data-en="Why I started Texas Home &amp; Business Essentials" data-es="Por qué fundé Texas Home &amp; Business Essentials">Why I started Texas Home &amp; Business Essentials</h2><p  data-en="Through my experience in commercial banking and financial analysis, I have seen how rising operating costs can put pressure on businesses. Even small changes in recurring expenses can make a difference over time." data-es="A través de mi experiencia en banca comercial y análisis financiero, he visto cómo el aumento de los costos operativos puede afectar a las empresas. Incluso pequeños cambios en los gastos recurrentes pueden marcar una diferencia con el tiempo.">Through my experience in commercial banking and financial analysis, I have seen how rising operating costs can put pressure on businesses. Even small changes in recurring expenses can make a difference over time.</p><p  data-en="Families face similar challenges when buying the basic supplies they depend on every day. I started Texas Home &amp; Business Essentials with both households and businesses in mind, to offer a simpler way to shop for necessities and manage everyday spending." data-es="Las familias enfrentan desafíos similares al comprar los productos básicos que necesitan a diario. Fundé Texas Home &amp; Business Essentials pensando tanto en hogares como en empresas, para ofrecer una forma más sencilla de comprar productos esenciales y administrar los gastos cotidianos.">Families face similar challenges when buying the basic supplies they depend on every day. I started Texas Home &amp; Business Essentials with both households and businesses in mind, to offer a simpler way to shop for necessities and manage everyday spending.</p><h2  data-en="Our mission" data-es="Nuestra misión">Our mission</h2><p  data-en="Our mission is to make everyday essentials more accessible through competitive pricing, clear purchasing options and dependable local service. We aim to help families and businesses across Greater Houston make the most of their budgets." data-es="Nuestra misión es hacer más accesibles los productos esenciales mediante precios competitivos, opciones de compra claras y un servicio local confiable. Buscamos ayudar a familias y empresas del área de Houston a aprovechar mejor sus presupuestos.">Our mission is to make everyday essentials more accessible through competitive pricing, clear purchasing options and dependable local service. We aim to help families and businesses across Greater Houston make the most of their budgets.</p></div><div class="features story-values"><div class="feature"><strong  data-en="Affordability" data-es="Precios accesibles">Affordability</strong><span  data-en="Practical value for everyday needs." data-es="Valor práctico para las necesidades diarias.">Practical value for everyday needs.</span></div><div class="feature"><strong  data-en="Transparency" data-es="Transparencia">Transparency</strong><span  data-en="Clear pricing and straightforward purchasing." data-es="Precios claros y compras sencillas.">Clear pricing and straightforward purchasing.</span></div><div class="feature"><strong  data-en="Community" data-es="Comunidad">Community</strong><span  data-en="Supporting local households and businesses." data-es="Apoyo a hogares y empresas locales.">Supporting local households and businesses.</span></div></div><div class="story-actions"><button class="goldbtn" onclick="showSection('home');document.getElementById('catalog').scrollIntoView()" data-en="Shop Essentials" data-es="Comprar productos">Shop Essentials</button><button class="hero-secondary" onclick="showSection('business')" data-en="Explore Wholesale" data-es="Explorar ventas al por mayor">Explore Wholesale</button></div></section>
+<p class="notice quote-wide" data-en="Online submission is not yet available. You can prepare and copy your request." data-es="El envío en línea aún no está disponible. Puedes preparar y copiar tu solicitud." id="quoteStatus">Online submission is not yet available. You can prepare and copy your request.</p>
+</form>
+</div>
+</div>
+</section>
+<section class="hidden" id="about"><div class="story-intro"><div class="eyebrow" data-en="OUR STORY · HOUSTON, TEXAS" data-es="NUESTRA HISTORIA · HOUSTON, TEXAS">OUR STORY · HOUSTON, TEXAS</div><h1 data-en="Rooted in Houston. Built with purpose." data-es="Con raíces en Houston. Con propósito.">Rooted in Houston. Built with purpose.</h1><p data-en="A family-owned business focused on making everyday essentials more accessible." data-es="Una empresa familiar dedicada a hacer más accesibles los productos esenciales.">A family-owned business focused on making everyday essentials more accessible.</p></div><figure class="story-skyline"><img alt="AI-generated illustration inspired by the Houston skyline" height="864" loading="lazy" src="https://pub-c8e0ce5c7b9243408a44c12121ca35a2.r2.dev/banners/our-story-hero.png" width="1728"/><figcaption data-en="AI-generated illustration inspired by Houston." data-es="Ilustración generada por IA e inspirada en Houston.">AI-generated illustration inspired by Houston.</figcaption></figure><div class="story-body"><div><div class="eyebrow" data-en="OUR BEGINNING" data-es="NUESTROS INICIOS">OUR BEGINNING</div><h2 data-en="A practical idea, a personal commitment." data-es="Una idea práctica, un compromiso personal.">A practical idea, a personal commitment.</h2></div><div><p data-en="Texas Home &amp; Business Essentials grew from a simple observation: everyday expenses matter. Experience in commercial banking and financial analysis helped shape our understanding of how recurring costs affect businesses and families alike." data-es="Texas Home &amp; Business Essentials nació de una observación sencilla: los gastos cotidianos importan. La experiencia en banca comercial y análisis financiero nos ayudó a comprender cómo los costos recurrentes afectan a empresas y familias.">Texas Home &amp; Business Essentials grew from a simple observation: everyday expenses matter. Experience in commercial banking and financial analysis helped shape our understanding of how recurring costs affect businesses and families alike.</p><p data-en="As a family-owned business, we are building a simpler way for households and organizations across Greater Houston to source the supplies they rely on." data-es="Como empresa familiar, estamos creando una forma más sencilla de adquirir los suministros que necesitan los hogares y las organizaciones del área de Houston.">As a family-owned business, we are building a simpler way for households and organizations across Greater Houston to source the supplies they rely on.</p></div></div><div class="story-mission"><div class="eyebrow" data-en="OUR MISSION" data-es="NUESTRA MISIÓN">OUR MISSION</div><h2 data-en="Everyday value. Lasting relationships." data-es="Valor cotidiano. Relaciones duraderas.">Everyday value. Lasting relationships.</h2><p data-en="Our mission is to make essential supplies more accessible through competitive pricing, straightforward purchasing and a commitment to local service." data-es="Nuestra misión es hacer más accesibles los suministros esenciales mediante precios competitivos, compras sencillas y un compromiso con el servicio local.">Our mission is to make essential supplies more accessible through competitive pricing, straightforward purchasing and a commitment to local service.</p></div><div class="features story-values"><div class="feature"><strong data-en="Affordability" data-es="Precios accesibles">Affordability</strong><span data-en="Practical value for everyday needs." data-es="Valor práctico para las necesidades diarias.">Practical value for everyday needs.</span></div><div class="feature"><strong data-en="Transparency" data-es="Transparencia">Transparency</strong><span data-en="Clear pricing and straightforward purchasing." data-es="Precios claros y compras sencillas.">Clear pricing and straightforward purchasing.</span></div><div class="feature"><strong data-en="Community" data-es="Comunidad">Community</strong><span data-en="Supporting local households and businesses." data-es="Apoyo a hogares y empresas locales.">Supporting local households and businesses.</span></div></div><div class="story-actions"><button class="goldbtn" data-en="Shop Essentials" data-es="Comprar productos" onclick="showSection('home');document.getElementById('catalog').scrollIntoView()">Shop Essentials</button><button class="hero-secondary" data-en="Explore Wholesale" data-es="Explorar ventas al por mayor" onclick="showSection('business')">Explore Wholesale</button></div></section>
   </main>
   <aside class="drawer" id="drawer">
    <div class="drawerheader">

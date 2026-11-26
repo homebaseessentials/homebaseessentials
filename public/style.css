@@ -799,3 +799,22 @@ main{max-width:1320px;padding:36px 28px 80px}.hero{background:#fffdf8;color:var(
 /* Longer brand lockup: preserve aspect ratio at every width. */
 .logo{width:430px;max-width:52%;height:auto;object-fit:contain;flex-shrink:1;min-width:0}
 @media(max-width:600px){.logo{width:100%;max-width:100%;height:auto;max-height:100px}.top{flex-wrap:wrap;justify-content:center}.top .right{margin-left:0;justify-content:center;width:100%}}
+
+/* Header search: preserve the existing brand and navigation. */
+header .top {max-width:1320px; gap:clamp(12px,2vw,28px); padding:14px 22px;}
+header .top .logo {width:430px; max-width:38%; height:auto; flex:0 1 430px;}
+header .top .right {margin-left:0; flex:0 0 auto; flex-wrap:nowrap; width:auto;}
+.header-search {display:flex; flex:1 1 320px; min-width:0; height:46px; background:#fff; border:1px solid var(--gold); border-radius:6px; overflow:hidden;}
+.header-search input {flex:1; width:0; min-width:0; border:0; background:#fff; color:var(--ink); padding:0 14px; outline-offset:-3px; font-size:15px;}
+.header-search button {display:grid; place-items:center; flex:0 0 48px; border:0; background:var(--gold); color:var(--navy);}
+.header-search button:hover {background:#e6bf79;}
+.header-search:focus-within {outline:2px solid #fff; outline-offset:3px;}
+@media(max-width:850px){header .top {flex-wrap:wrap; justify-content:space-between; gap:12px;} header .top .logo {max-width:58%; flex:0 1 430px;} header .top .right {margin-left:auto;} .header-search {order:3; flex:1 0 100%;}}
+@media(max-width:420px){header .top {padding:12px;} header .top .logo {max-width:100%; width:100%; flex:0 0 100%; max-height:85px;} header .top .right {margin:auto;} .header-search {height:42px;}}
+
+/* Business and story refinements only */
+#business .quote-layout{grid-template-columns:minmax(0,.8fr) minmax(0,1.35fr);gap:32px;align-items:start;margin-top:40px}
+#business .quote-sidebar{background:var(--navy);color:#fff;padding:36px;border-radius:4px}#business .quote-sidebar h2{font:400 30px Georgia,serif;color:#fff;margin:14px 0 24px}#business .quote-sidebar .eyebrow{color:#e1c28a}#business .quote-sidebar ul{padding-left:18px}#business .quote-sidebar li{color:#f5f1e9;margin:17px 0;line-height:1.5}#business .quote-sidebar .notice{color:#d5dce5;border-top:1px solid #ffffff30;padding-top:20px}
+#business #quote{padding:clamp(22px,4vw,44px);background:#fff;border:1px solid #e2dbce;box-shadow:0 8px 30px #10213d08;scroll-margin-top:24px}#business #quote h2{font:400 38px Georgia,serif;margin:10px 0;color:var(--navy)}#business .quote-lead{color:var(--muted);line-height:1.6;margin-bottom:25px}#business #quote .form{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}#business #quote .form label{min-width:0}#business #quote .form input,#business #quote .form select,#business #quote .form textarea{box-sizing:border-box;border:1px solid #d8d3c9;border-radius:4px;background:#fcfbf8;padding:12px;min-height:46px}#business #quote .form textarea{min-height:120px}#business #quote .quote-wide,#business #draft,#business #copyQuote{grid-column:1/-1}#business #quoteStatus{margin:0;font-size:12px}#business #quote .goldbtn{min-height:48px}
+#about .story-intro{background:#f5f0e6;padding:clamp(35px,6vw,80px) 24px}#about .story-intro h1{max-width:850px;margin:15px auto;font-size:clamp(34px,4.5vw,60px);line-height:1.12}#about .story-intro p{max-width:640px;margin:18px auto 0}#about .story-body{display:grid;grid-template-columns:1fr 1.5fr;gap:45px;max-width:none;padding:clamp(28px,5vw,65px);margin:0;background:#fff}#about .story-body h2{line-height:1.2}#about .story-body p:first-child{margin-top:0}#about .story-mission{background:var(--navy);color:#fff;text-align:center;padding:clamp(30px,5vw,60px) 24px}#about .story-mission .eyebrow{color:#e1c28a}#about .story-mission h2{font:400 clamp(28px,4vw,42px) Georgia,serif;margin:15px 0}#about .story-mission p{max-width:700px;margin:0 auto;line-height:1.7;color:#f3eee5}#about .story-values{margin-top:28px}#about .story-actions{padding:24px 0}
+@media(max-width:760px){#business .quote-layout,#about .story-body{grid-template-columns:1fr;gap:20px}#business .quote-sidebar{padding:24px}}@media(max-width:480px){#business #quote .form{grid-template-columns:1fr}#business #quote h2{font-size:30px}}
